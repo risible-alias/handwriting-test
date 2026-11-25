@@ -1,0 +1,184 @@
+{
+  "set": "web-writers-v1",
+  "status": "draft: not frozen until the user approves it and the notation vocabulary exists",
+  "role": "evaluation only; never trained on, never used to tune, and writers who take part are excluded from training",
+  "categories": {
+    "structure": "fractions, scripts, roots, integrals and sums",
+    "lookalike": "symbols this project has seen confused: delta/S/5, phi/psi, 9/q, z/2, a/u, s/5",
+    "marks": "commas, decimal points, primes and inline slash fractions",
+    "long": "one-line derivations of 31 to 52 tokens",
+    "words": "mixed text and maths",
+    "notation": "\\sup, \\min, \\max, \\inf and \\therefore, added with the next vocabulary"
+  },
+  "order": "block-randomised per writer: four rounds, each with one prompt from every category in a shuffled order, so a writer who stops early still covers every category",
+  "prompts": [
+    {
+      "id": "web-v1-structure-1",
+      "category": "structure",
+      "latex": "\\frac{3x-1}{2y+5}",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-structure-2",
+      "category": "structure",
+      "latex": "x_{n+1}^{2}+\\sqrt{a^{2}+b^{2}}",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-structure-3",
+      "category": "structure",
+      "latex": "\\int_{0}^{\\pi}\\sin^{2}\\theta d\\theta",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-structure-4",
+      "category": "structure",
+      "latex": "\\sum_{k=1}^{n}k^{3}=\\frac{n^{2}(n+1)^{2}}{4}",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-lookalike-1",
+      "category": "lookalike",
+      "latex": "\\delta=\\frac{\\epsilon}{2}",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-lookalike-2",
+      "category": "lookalike",
+      "latex": "\\nabla\\varphi+\\psi=0",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-lookalike-3",
+      "category": "lookalike",
+      "latex": "q_{9}=9q-z_{2}",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-lookalike-4",
+      "category": "lookalike",
+      "latex": "y=a^{2}u-5s+2z",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-marks-1",
+      "category": "marks",
+      "latex": "f'''(x)=6,x\\neq0",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-marks-2",
+      "category": "marks",
+      "latex": "a=1.25,b=0.05,c=10.5",
+      "instruction": null,
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-marks-3",
+      "category": "marks",
+      "latex": "\\sin(1/x)",
+      "instruction": "Write the fraction with a slash, on one line, not stacked.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-marks-4",
+      "category": "marks",
+      "latex": "g'(t)=3t^{2}-1/t",
+      "instruction": "Write the fraction with a slash, on one line, not stacked.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-long-1",
+      "category": "long",
+      "latex": "(x+2)^{2}-4=x^{2}+4x+4-4=x(x+4)",
+      "instruction": "Keep it on one line. Write a bit smaller if you need to.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-long-2",
+      "category": "long",
+      "latex": "\\frac{d}{dx}(e^{2x}\\cos x)=2e^{2x}\\cos x-e^{2x}\\sin x",
+      "instruction": "Keep it on one line. Write a bit smaller if you need to.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-long-3",
+      "category": "long",
+      "latex": "\\int_{1}^{e}\\frac{\\ln x}{x}dx=[\\frac{(\\ln x)^{2}}{2}]_{1}^{e}=\\frac{1}{2}",
+      "instruction": "Keep it on one line. Write a bit smaller if you need to.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-long-4",
+      "category": "long",
+      "latex": "\\lim_{x\\rightarrow0}\\frac{1-\\cos x}{x^{2}}=\\lim_{x\\rightarrow0}\\frac{\\sin x}{2x}=\\frac{1}{2}",
+      "instruction": "Keep it on one line. Write a bit smaller if you need to.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-words-1",
+      "category": "words",
+      "latex": "\\text{Let}\\ \\epsilon>0\\ \\text{be arbitrary.}",
+      "instruction": "Write the words in your normal handwriting.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-words-2",
+      "category": "words",
+      "latex": "\\text{for all}\\ x\\in\\mathbb{R},\\ f(x)\\geq0",
+      "instruction": "Write the words in your normal handwriting.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-words-3",
+      "category": "words",
+      "latex": "\\text{so the area is}\\ 12\\ \\text{square units}",
+      "instruction": "Write the words in your normal handwriting.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-words-4",
+      "category": "words",
+      "latex": "\\text{hence}\\ a_{n}\\rightarrow L\\ \\text{as}\\ n\\rightarrow\\infty",
+      "instruction": "Write the words in your normal handwriting.",
+      "requires": "latex-v4"
+    },
+    {
+      "id": "web-v1-notation-1",
+      "category": "notation",
+      "latex": "\\sup_{x\\in[0,1]}|f(x)|\\leq M",
+      "instruction": null,
+      "requires": "latex-v5 (pending vocabulary expansion)"
+    },
+    {
+      "id": "web-v1-notation-2",
+      "category": "notation",
+      "latex": "\\min\\{a,b\\}\\leq\\max\\{a,b\\}",
+      "instruction": null,
+      "requires": "latex-v5 (pending vocabulary expansion)"
+    },
+    {
+      "id": "web-v1-notation-3",
+      "category": "notation",
+      "latex": "\\therefore x=\\pm3",
+      "instruction": null,
+      "requires": "latex-v5 (pending vocabulary expansion)"
+    },
+    {
+      "id": "web-v1-notation-4",
+      "category": "notation",
+      "latex": "\\inf S=0",
+      "instruction": null,
+      "requires": "latex-v5 (pending vocabulary expansion)"
+    }
+  ]
+}

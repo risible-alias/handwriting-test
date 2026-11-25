@@ -1,0 +1,15 @@
+Help me test a handwriting reader!
+
+I'm building a small text-recognition model that turns handwritten maths into typed maths! You can help check that it works for people other than myself by copying up to 24 short lines of maths in your own handwriting. It takes about 10 to 15 minutes, and you need a stylus, such as an Apple Pencil or S Pen.
+
+Taking part is up to you. You can skip any line, or stop at any time. Whatever you've finished by then is kept, unless you ask for it to be deleted.
+
+What is saved: your pen strokes (where the pen went, the timing and the pressure), which line you were copying, and your device and browser type. If you tell me whether you write with your left or right hand, I’ll save that choice with your writing. You can leave it blank. I won’t ask for your name or email. Your writing is saved under a random ID. Unsent lines stay in this browser for retry.
+
+How it is used: only to measure how accurately the app reads different people's handwriting. It won't be used to train the app or to generate handwriting. It is stored in my private Google Drive, and it won't be published or shared.
+
+Your writer ID is shown while you write and when you finish. To have your writing deleted, send that ID to me by replying to the invitation. If someone forwarded the link, ask them to pass your ID on to me. I’ll delete the writing saved under that ID.
+
+:)
+
+Alec Mark

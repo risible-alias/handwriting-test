@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="format-detection" content="telephone=no">
+<title>Handwriting test</title>
+<link rel="stylesheet" href="vendor/katex-0.16.9/katex.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Welcome / consent -->
+<main id="screen-welcome" class="screen" hidden>
+  <div class="consent-scroll">
+    <article id="consent" class="consent"></article>
+  </div>
+  <footer class="footer">
+    <div class="hand-row">
+      <span class="hand-label" id="hand-label">Which hand do you write with?</span>
+      <div class="hand-buttons" role="group" aria-labelledby="hand-label">
+        <button type="button" class="btn" id="hand-left" aria-pressed="false">Left</button>
+        <button type="button" class="btn" id="hand-right" aria-pressed="false">Right</button>
+      </div>
+      <span class="hand-note">Optional. Your choice moves the buttons and is saved with your writing.</span>
+    </div>
+    <div class="start-row">
+      <label class="agree" for="agree">
+        <input type="checkbox" id="agree">
+        <span class="box" aria-hidden="true"></span>
+        <span>I agree</span>
+      </label>
+      <button type="button" class="btn primary big" id="start" disabled>Start</button>
+    </div>
+    <p id="load-error" class="error" hidden></p>
+  </footer>
+</main>
+
+<!-- 2. Writing (no text inputs here, so Scribble cannot trigger) -->
+<main id="screen-write" class="screen" hidden>
+  <header class="prompt-zone">
+    <div class="meta">
+      <span id="progress" class="quiet">1 of 24</span>
+      <span id="writing-id" class="quiet"></span>
+      <span id="mode-note" class="quiet"></span>
+      <button type="button" id="finish" class="link quiet">Finish now</button>
+    </div>
+    <div id="prompt" class="prompt" aria-live="polite"></div>
+    <button type="button" id="render-retry" class="btn" hidden>Reload prompt</button>
+    <p id="instruction" class="instruction">&nbsp;</p>
+  </header>
+  <div id="controls" class="controls side-left">
+    <button type="button" class="btn" id="undo" disabled>Undo</button>
+    <button type="button" class="btn" id="clear" disabled>Clear</button>
+    <button type="button" class="btn" id="skip">Skip</button>
+    <button type="button" class="btn primary big" id="next" disabled>Next</button>
+  </div>
+  <div id="save-error" role="alert" hidden>
+    This line could not be saved on this device. Keep this page open and try again, or download your writing.
+    <button type="button" class="btn" id="save-retry">Try again</button>
+    <button type="button" class="btn" id="save-backup">Download writing</button>
+  </div>
+  <div id="area" class="area">
+    <canvas id="canvas"></canvas>
+    <p id="hint" class="hint" hidden>Copy it in your usual handwriting. Don't solve or tidy it.</p>
+    <p id="note" class="note" hidden></p>
+  </div>
+</main>
+
+<!-- 3. Done -->
+<main id="screen-done" class="screen" hidden>
+  <div class="done">
+    <h1>Thank you!</h1>
+    <p class="done-sub">Your ID. Keep it if you might want your writing deleted.</p>
+    <div class="id-short" id="id-short"></div>
+    <div class="id-full" id="id-full"></div>
+    <button type="button" class="btn big" id="copy-id">Copy</button>
+    <div class="upload">
+      <p id="upload-state" class="upload-state"></p>
+      <div class="upload-actions">
+        <button type="button" class="btn" id="retry" hidden>Retry</button>
+        <button type="button" class="btn" id="save-file">Save a file instead</button>
+      </div>
+    </div>
+    <button type="button" id="new-writer" class="link quiet">Someone else wants to write</button>
+  </div>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="modal-text">
+    <p id="modal-text"></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn" id="modal-no">Keep</button>
+      <button type="button" class="btn primary" id="modal-yes">OK</button>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/katex-0.16.9/katex.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
