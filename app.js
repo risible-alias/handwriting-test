@@ -320,7 +320,10 @@
       // Include the final position if it differs from the last coalesced sample.
       const last = cur.points[cur.points.length - 1];
       const p = makePoint(e);
-      if (p[0] !== last[0] || p[1] !== last[1]) cur.points.push(p);
+      if (p[0] !== last[0] || p[1] !== last[1]) {
+        cur.points.push(p);
+        drawTail(cur.points);
+      }
       const n = cur.points.length;
       const m = mid(cur.points[n - 2], cur.points[n - 1]);
       ctx.beginPath(); ctx.moveTo(m[0], m[1]);
