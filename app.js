@@ -310,6 +310,10 @@
     const list = (e.getCoalescedEvents && e.getCoalescedEvents()) || [];
     const evs = list.length ? list : [e];
     for (let i = 0; i < evs.length; i++) {
+      // iPad Safari repeats coalesced samples already delivered with the previous
+      // move event. Keep each sample once, in time order.
+      const t = timeOf(evs[i]);
+      if (t <= cur.points[cur.points.length - 1][2]) continue;
       cur.points.push(makePoint(evs[i]));
       drawTail(cur.points);
     }
@@ -320,7 +324,7 @@
       // Include the final position if it differs from the last coalesced sample.
       const last = cur.points[cur.points.length - 1];
       const p = makePoint(e);
-      if (p[0] !== last[0] || p[1] !== last[1]) {
+      if ((p[0] !== last[0] || p[1] !== last[1]) && p[2] > last[2]) {
         cur.points.push(p);
         drawTail(cur.points);
       }

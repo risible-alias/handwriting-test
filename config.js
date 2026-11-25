@@ -9,4 +9,4 @@ const SUBMIT_URL = "https://script.google.com/macros/s/AKfycbyTpCKo-l0KsIThHjPJ4
 
 // Change the version if the consent text changes in a way that matters.
 const CONSENT_VERSION = "web-writer-consent-v3";
-const PAGE_VERSION = "web-writers-page-v3";
+const PAGE_VERSION = "web-writers-page-v4";

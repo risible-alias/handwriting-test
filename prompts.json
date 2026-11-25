@@ -1,6 +1,6 @@
 {
   "set": "web-writers-v1",
-  "status": "draft: not frozen until the user approves it and the notation vocabulary exists",
+  "status": "frozen 25 November 2026 after the user's approval, before any other writer took part. The notation prompts are scored once latex-v5 adds \\sup, \\min, \\max, \\inf and \\therefore.",
   "role": "evaluation only; never trained on, never used to tune, and writers who take part are excluded from training",
   "categories": {
     "structure": "fractions, scripts, roots, integrals and sums",
